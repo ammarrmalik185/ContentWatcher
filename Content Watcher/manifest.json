@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Content Watcher",
+  "version": "0.0.1",
+  "description": "Watch content, but better",
+  "background": {
+    "page": "background/index.html",
+    "persistent": false
+  },
+  "content_scripts": [
+    {"matches": ["https://www.youtube.com/*"], "js": ["content_scripts/websiteConfigs/youtube.js"]},
+
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "content_scripts/websiteConfigs/default.js",
+        "content_scripts/ContentController.js"
+      ]
+    }
+
+  ],
+  "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com https://www.googletagmanager.com; object-src 'self'"
+}
