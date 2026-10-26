@@ -1,6 +1,12 @@
 {
-  "name": "Content Watcher",
-  "version": "1.0.0",
-  "dependencies": {
-  }
+  "name": "content-watcher",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "test": "node --test",
+    "test:browser": "node scripts/browser-smoke.mjs"
+  },
+  "engines": { "node": ">=22" }
 }
